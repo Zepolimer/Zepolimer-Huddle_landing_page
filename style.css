@@ -1,0 +1,161 @@
+/* 
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+
+*/
+
+:root {
+    --violet: 75;
+    --soft-magenta: hsl(300, 69%, 71%);
+}
+
+header {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: hsl(257, 40%, 49%);
+    height: auto;
+    background-image: url(./images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center top 0%;
+    overflow: hidden;
+}
+
+.main-container {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* IMAGES */
+.logo {
+    width: 125px;
+    margin-top: 26px;
+    margin-bottom: 58px;
+}
+.mockups {
+    width: 305px;
+}
+
+/* TEXT & TITLE */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 61px;
+}
+
+p {
+    color: white;
+    text-align: center;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+button{
+    display: block;
+    margin: 0px auto;
+    padding: 12px 72px;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+    color: hsl(257, 40%, 49%);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* FOOTER */
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a { color: hsl(0, 0%, 75%); }
+
+
+/* ICONS */
+ion-items {
+    height: auto;
+    margin: 0px 85px;
+}
+
+ion-icon {
+    padding: 70px 5px;
+    font-size: 30px;
+    color: white;
+  }
+
+@media (min-width: 850px) {
+
+    body {
+        background-image: url(./images/bg-desktop.svg);
+        background-position: left top;
+    }
+
+    .main-container {
+        max-width: 1280px;
+        width: 90vw;
+        display: grid;
+        grid-template-columns: 1fr[first] 1fr;
+        grid-template-rows: 180px 495px 102px;
+    }
+
+    .logo {
+        width: auto;
+        width: 15vw;
+        margin-top: 45px;
+    }
+    .mockups {
+        width: auto;
+        width: 48vw;
+        margin-top: 25px;
+    }
+
+    .text {
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+
+    h2, p {
+        text-align: left;
+        padding-left: 60px;
+    }
+
+    h2 {
+        font-size: 2.8vw;
+        margin-top: 45px;
+        margin-bottom: 2px;
+    }
+
+    p {
+        font-size: 1.275vw;
+        line-height: 1.8rem;
+    }
+
+    ion-items {
+        grid-column-start: 2;
+        grid-row-start: 3;
+        margin: 0px 0px;
+        justify-self: end;
+        align-self: center;
+    }
+
+    ion-icon {
+        font-size: 36px;
+    }
+
+    button {
+        padding: 18px 70px;
+        border-radius: 30px;
+        font-size: 18px;
+        margin: 0 60px;
+    }
+}
