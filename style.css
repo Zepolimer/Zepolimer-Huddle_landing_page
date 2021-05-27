@@ -1,15 +1,12 @@
-/* 
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-
-*/
-
 :root {
     --violet: 75;
     --soft-magenta: hsl(300, 69%, 71%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: border-box;
 }
 
 header {
@@ -18,16 +15,16 @@ header {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: hsl(257, 40%, 49%);
+    width: 100%;
     height: auto;
+    background-color: hsl(257, 40%, 49%);
     background-image: url(./images/bg-mobile.svg);
     background-repeat: no-repeat;
-    background-position: center top 0%;
-    overflow: hidden;
+    background-size: 100%;
 }
 
 .main-container {
-    max-width: 300px;
+    max-width: 100%;
     height: auto;
     margin: 0 auto;
 }
@@ -35,27 +32,31 @@ body {
 /* IMAGES */
 .logo {
     width: 125px;
-    margin-top: 26px;
-    margin-bottom: 58px;
+    margin: 26px 0 58px 20px;
 }
 .mockups {
-    width: 305px;
+    width: 90%;
+    margin: 0 0 0 5%;
 }
 
 /* TEXT & TITLE */
+h2, p {
+    text-align: center;
+    color: white;
+}
 h2 {
     font-family: 'Poppins', sans-serif;
-    color: white;
     font-weight: 600;
-    text-align: center;
-    margin-top: 61px;
+    margin: 60px 0 10px 0;
 }
-
 p {
-    color: white;
-    text-align: center;
     line-height: 1.5rem;
-    margin-bottom: 25px;
+    margin: 0 15px 25px 15px;
+}
+@media (min-width: 720px) {
+    p {
+        margin: 0 60px 25px 60px;
+    }
 }
 
 /* BUTTON */
@@ -82,9 +83,8 @@ button:hover {
 
 
 /* ICONS */
-ion-items {
-    height: auto;
-    margin: 0px 85px;
+.icons{
+text-align: center;
 }
 
 ion-icon {
@@ -93,30 +93,33 @@ ion-icon {
     color: white;
   }
 
-@media (min-width: 850px) {
+@media (min-width: 1025px) {
 
     body {
+        width: 100%;
         background-image: url(./images/bg-desktop.svg);
-        background-position: left top;
+        background-size: 1440px;
+        background-position-y: 98%;
+        background-position-x: -105px;
     }
 
     .main-container {
-        max-width: 1280px;
-        width: 90vw;
+        width: 94%;
         display: grid;
-        grid-template-columns: 1fr[first] 1fr;
-        grid-template-rows: 180px 495px 102px;
+        grid-template-columns: 53% 45%;
+        grid-template-rows: 180px 505px 50px;
     }
 
     .logo {
         width: auto;
         width: 15vw;
-        margin-top: 45px;
+        margin: 45px 0 45px 0;
     }
     .mockups {
-        width: auto;
-        width: 48vw;
-        margin-top: 25px;
+        width: 50.2vw;
+        margin: 25px 0 0 0;
+        grid-row: 2;
+        grid-column: 1;
     }
 
     .text {
@@ -126,30 +129,31 @@ ion-icon {
 
     h2, p {
         text-align: left;
-        padding-left: 60px;
+        grid-row: 2;
+        grid-column: 2;
     }
 
     h2 {
         font-size: 2.8vw;
-        margin-top: 45px;
-        margin-bottom: 2px;
+        margin: 45px 40px 2px 60px;
     }
 
     p {
         font-size: 1.275vw;
         line-height: 1.8rem;
+        margin-right: 20px;
     }
 
-    ion-items {
-        grid-column-start: 2;
-        grid-row-start: 3;
-        margin: 0px 0px;
+    .icons {
+        grid-column: 2;
+        grid-row: 3;
         justify-self: end;
         align-self: center;
     }
 
     ion-icon {
         font-size: 36px;
+        padding: 0px 5px;
     }
 
     button {
@@ -157,5 +161,9 @@ ion-icon {
         border-radius: 30px;
         font-size: 18px;
         margin: 0 60px;
+    }
+
+    .attribution { 
+        grid-row: 3;
     }
 }
