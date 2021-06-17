@@ -1,169 +1,408 @@
-:root {
-    --violet: 75;
-    --soft-magenta: hsl(300, 69%, 71%);
-}
-
-* {
+*,
+*::before,
+*::after { 
     margin: 0;
     padding: 0;
-    border: border-box;
+    border: border-box; 
 }
 
-header {
-    font-family: 'Poppins', sans-serif;
+:root {
+--pink: hsl(322, 100%, 66%);
+--very-pale-cyan: hsl(193, 100%, 96%);
+--very-dark-cyan: hsl(192, 100%, 9%);
+--grayish-blue: hsl(208, 11%, 55%);
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
     width: 100%;
-    height: auto;
-    background-color: hsl(257, 40%, 49%);
-    background-image: url(./images/bg-mobile.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
 .main-container {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0px auto;
+    font-family: 'Open Sans', sans-serif;
 }
 
-/* IMAGES */
-.logo {
-    width: 125px;
-    margin: 26px 0 58px 20px;
-}
-.mockups {
-    width: 90%;
-    margin: 0 0 0 5%;
-}
-
-/* TEXT & TITLE */
-h2, p {
+/* Header part */
+header {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(./images/bg-hero-mobile.svg);
+    background-color: var(--very-pale-cyan);
+    width: 100%;
     text-align: center;
+}
+
+.huddle-logo  {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px 80px 20px;
+    padding-top: 20px;
+}
+.logo {
+    width: 90px;
+    height: 20px;
+}
+.tryit {
+    width: 100px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px hsla(209, 11%, 55%, 0.404);
+    font-size: 11px;
+    border: none;
+    outline: none;
+}
+.tryit:hover {
+    cursor: pointer;
+    background-color: var(--pink);
+    color: white;
+    transform:scale(1.2);
+    transition: all 1s;
+}
+
+/* Title & text part */
+.bg-container {
+    margin: 0 5%;
+}
+.title {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.about {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+/* button */
+.btn {
+    width: 70%;
+    height: 40px;
+    border-radius: 25px;
+    background-color: var(--pink);
+    border: none;
+    outline: none;
+/* font style */
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+/* position */
+    margin: 30px 0 50px 0;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: hsl(322, 72%, 52%);
+    transform:scale(1.1);
+    transition: all 1s;
+}
+
+/* Header image */
+#mockup {
+    width: 80%;
+    margin: 0 0 25px 0;
+}
+
+
+/* Containers part */
+.container1, .container2, .container3 {
+    width: 90%;
+    border-radius: 25px;
+    margin: 40px auto;
+    box-shadow: 1px 1px 1px 1px hsla(209, 11%, 55%, 0.404);
+    text-align: center;
+}
+
+#illustration {
+    width: 75%;
+    margin: 50px 0 40px 0;
+}
+
+.subtitle {
+    font-family: 'Poppins';
+    font-size: 20px;
+}
+.subtext {
+    font-size: 15px;
+    color: var(--grayish-blue);
+    line-height: 1.2rem;
+    margin: 20px 25px 0 25px;
+    padding-bottom: 25px;
+}
+
+/* Part between description & footer */
+.transition {
+    position: relative;
+    bottom: -65px;
+    width: 90%;
+    padding-top: 40px;
+    margin: 60px auto 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px 1px hsla(209, 11%, 55%, 0.404);
+    /* Font style */
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 2;
+}
+.btn-transition {
+    margin: 25px 0 35px 0;
+    font-size: 12px;
+}
+
+
+/* Footer with black background-color */
+.black-container {
+    position: relative;
+    z-index: 0;
+    background-color: var(--very-dark-cyan);
     color: white;
 }
-h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin: 60px 0 10px 0;
+.huddle-bottom {
+    padding-top: 125px;
+    padding-left: 20px;
 }
-p {
-    line-height: 1.5rem;
-    margin: 0 15px 25px 15px;
-}
-@media (min-width: 720px) {
-    p {
-        margin: 0 60px 25px 60px;
-    }
+.logo-bottom {
+    width: 130px;
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
 }
 
-/* BUTTON */
-button{
-    display: block;
-    margin: 0px auto;
-    padding: 12px 72px;
-    border-radius: 20px;
-    border: none;
-    background-color: white;
-    color: hsl(257, 40%, 49%);
+.lorem, .phone, .email {
+    display: flex;
+    font-size: 13px;
+    margin: 20px 20px;
+}
+.icon {
+    width: 14px;
+    margin: auto 20px auto 0px;
 }
 
-button:hover {
+.list {
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 2.25rem;
+}
+
+.social-logo {
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+.social {
+    width: 20px;
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+    margin: 0 5px;
+}
+
+.copyright {
+    padding-bottom: 35px;
+    margin: 15px auto 0 auto;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* Footer part already coded by Frontend Mentor */
+.attribution { 
+    margin: 0 auto;
+    font-size: 11px; 
+    text-align: center;
+    color: white;
+    background-color: var(--very-dark-cyan);
+    padding: 15px auto;
+}
+.attribution a { 
+    color: white;
+    text-decoration: none;
+}
+.attribution a:hover {
     cursor: pointer;
 }
 
-/* FOOTER */
-.attribution { 
-    font-size: 11px;
-    text-align: center;
-}
-.attribution a { color: hsl(0, 0%, 75%); }
+
+    @media (min-width: 765px) {
+        .main-container, header {
+            text-align: left;
+        }
+
+        header { margin-bottom: 160px;}
+
+        /* Blue Container */
+        .huddle-logo {
+            margin: 0 50px 120px 50px;
+        }
+        .logo {
+            width: 190px;
+            height: 40px;
+        }
+        .tryit {
+            width: 200px;
+            height: 48px;
+            font-size: 16px;
+            font-weight: 600;
+        }
 
 
-/* ICONS */
-.icons{
-text-align: center;
-}
+        .wrapper-grid {
+            display: grid;
+            grid-template-columns: 46vw 4vw 1fr;
+            
+        }
 
-ion-icon {
-    padding: 70px 5px;
-    font-size: 30px;
-    color: white;
-  }
+        .bg-container {
+            margin: 0 0 0 70px;
+            width: 35.54vw;
+        }
+        .title {
+            font-size: 24px;
+        }
+        .about {
+            font-size: 14px;
+        }
+        .btn {
+            width: 280px;
+            height: 55px;
+        }
 
-@media (min-width: 1025px) {
+        #mockup {
+            width: 42.60vw;
+            margin-left: 40px;
+        }
 
-    body {
-        width: 100%;
-        background-image: url(./images/bg-desktop.svg);
-        background-size: 1440px;
-        background-position-y: 98%;
-        background-position-x: -105px;
+
+        /* QUOTES & images containers */
+        .container1, .container2, .container3 {
+            width: 85%;
+            display: flex;
+        }
+
+        .container2 {
+            flex-direction: row;
+        }
+        .quote {
+            text-align: left;
+            margin: auto 0 ;
+        }
+
+
+        .container3, .container1 {
+            flex-direction: row-reverse;
+        }
+        .left-quote {
+            padding-left: 3vw;
+        }
+        .grow, .users {
+            margin: auto 2.5vw auto 11.11vw;
+        }
+
+        .subtitle {
+            font-size: 20px;
+
+        }
+        .subtext {
+            font-size: 15px;
+            line-height: 1.8rem;
+            margin: 10px 15px 0 0;
+        }
+
+        #illustration {
+            width: 28.59vw;            
+        }
+        .flowing {
+            margin: auto 11.45vw  auto 9.02vw;
+        }
+
+
+        /* Transition between quote & footer */
+        .transition {
+            width: 65%;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .btn-transition {
+            width: 50%;
+            height: 75px;
+            border-radius: 50px;
+            font-size: 18px;
+            margin: 25px auto 35px auto;
+        }
+
+
+        /* FOOTER with contact and social media */
+        .black-container {
+            display: grid;
+            grid-template-columns: 40% 30% 20% 10%;
+            grid-template-rows: auto;
+            padding: 0 6.95vw;
+        }
+        .firstCol {
+            grid-column: 1;
+        }
+        .logo-bottom {
+            width: 15.98vw;
+        }
+        .lorem, .phone, .email {
+            width: 27.79vw;
+            font-size: 1.11vw;
+        }
+
+        .list {
+            font-size: 1.25vw;
+            line-height: 1.8rem;
+            grid-column: 2;
+            padding-top: 170px;
+        }
+
+        .social-logo {
+            text-align: left;
+            grid-column: 3;
+            padding-top: 125px;
+        }
+        .copyright {
+            grid-column: 2/3;
+            grid-row: 2;
+            text-align: left;
+            font-size: 0.86vw;
+            position: relative;
+        }
+
+        .attribution {
+            width: 100vw;
+            grid-row: 3;
+        }
     }
 
-    .main-container {
-        width: 94%;
-        display: grid;
-        grid-template-columns: 53% 45%;
-        grid-template-rows: 180px 505px 50px;
-    }
 
-    .logo {
-        width: auto;
+@media (min-width: 1000px) {
+    .tryit {
+        margin-left: 13.88vw;
+        width: 13.88vw;
+    }
+    
+    .list {
+        font-size: 1.25vw;
+        display: flex;
+        line-height: 3rem;
+    }
+    .column2 {
+        flex-direction: column;
         width: 15vw;
-        margin: 45px 0 45px 0;
     }
-    .mockups {
-        width: 50.2vw;
-        margin: 25px 0 0 0;
-        grid-row: 2;
-        grid-column: 1;
+    .column3 {
+        flex-direction: column;
+        grid-column: 3;
+        width: 10vw;
     }
 
-    .text {
-        grid-column-start: 2;
-        grid-row-start: 2;
+    .social-logo {
+        margin: 0 0 0 -6.95vw;
+        grid-column: 4;
+        padding-top: 170px;
+    }
+    .copyright {
+        left: 0%;
     }
 
-    h2, p {
-        text-align: left;
-        grid-row: 2;
-        grid-column: 2;
-    }
-
-    h2 {
-        font-size: 2.8vw;
-        margin: 45px 40px 2px 60px;
-    }
-
-    p {
-        font-size: 1.275vw;
-        line-height: 1.8rem;
-        margin-right: 20px;
-    }
-
-    .icons {
-        grid-column: 2;
-        grid-row: 3;
-        justify-self: end;
-        align-self: center;
-    }
-
-    ion-icon {
-        font-size: 36px;
-        padding: 0px 5px;
-    }
-
-    button {
-        padding: 18px 70px;
-        border-radius: 30px;
-        font-size: 18px;
-        margin: 0 60px;
-    }
-
-    .attribution { 
-        grid-row: 3;
-    }
 }
